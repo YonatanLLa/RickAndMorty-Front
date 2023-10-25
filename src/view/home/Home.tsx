@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from "./Home.module.css"
 
 const Home: React.FC = () => {
   return (
-    <div style={{color: "black"}}>Home Page</div>
+    <div className={styles.home}>Home Page</div>
   );
 }
 

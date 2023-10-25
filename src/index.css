@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&family=Staatliches&family=Tilt+Neon&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --color-primario: #a8de02;
+    --color-secondario: #e1d600;
+    --color-complementario-1: #4cde02;
+    --color-complementario-2: #02de11;
+    --color-complementario-3: #02de5c;
+    --color-white: #f1eaea;
+    --color-fondo: #202702;
+    --font-primary: 'Tilt Neon', sans-serif;
+    --font-secondary: 'Raleway', sans-serif;
+    --font-complemente: 'Staatliches', sans-serif;
+
+}

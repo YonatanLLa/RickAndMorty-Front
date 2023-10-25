@@ -1,6 +1,68 @@
-.button {
-  background-color: #ff0000;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&family=Staatliches&family=Tilt+Neon&display=swap');
+.landingContiner{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #000000;
+  position: relative;
 }
-.button:hover {
-  background-color: blue;
+.landingTitle {
+  position: absolute;
+  color: var(--color-secondario);
+  font-family: var(--font-primary);
+  font-size: 5rem;
+  text-shadow: #fff203cc -11px 6px 45px;
+  z-index: 10;
+}
+
+.landingElement {
+  position: absolute;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  width: 400px;
+  height: 400px;
+  background-color: #4bde0211;
+  z-index: 1;
+  animation: moveY 5s linear infinite;
+  transform: translateY(0);
+}
+
+@keyframes moveY {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10%);
+  }
+}
+
+.landingButton{
+  margin-top: 12rem;
+  background-image: linear-gradient(to right, #a8de02 0%, #e1d600  51%, #02de5c  100%);
+  /* margin: 10px; */
+  padding: 15px 45px;
+  font-family: 'Raleway';
+  border: none;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: rgb(0, 0, 0);            
+  box-shadow: 0px 0px 45px #fff203cc;
+  border-radius: 10px;
+  display: block;
+  z-index: 20;
+  font-weight: 900;
+  font-size: 1.2rem;
+
+}
+.landingButton:hover {
+  cursor: pointer;
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+
+         
 }
