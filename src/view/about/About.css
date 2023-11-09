@@ -1,0 +1,56 @@
+.about-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .about-content {
+    text-align: center;
+  }
+  
+  h1 {
+    color: #3cdb34;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    color: #555;
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+  
+
+.redesSociales{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+.redesSociales li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid rgb(253, 253, 253);
+    border-radius: 10px;
+    margin-right: 10px;
+}
+.redesSociales li svg {
+    width: 40px;
+    height: 40px;
+    /* fill: none; */
+    fill: rgb(253, 253, 253);
+    /* stroke: wheat; */
+}
+
+.redesSociales li:hover {
+    background-color: rgb(253, 253, 253);
+    /* fill: black; */
+    stroke: rgb(0, 0, 0);
+
+    transition: background-color 0.5s ease ;
+    cursor: pointer;
+}

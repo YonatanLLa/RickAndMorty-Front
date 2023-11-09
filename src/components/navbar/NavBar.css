@@ -5,6 +5,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    z-index: 10;
 }
 .nav-container ul {
     padding: 1rem;
@@ -25,10 +26,11 @@
 
   
   nav li a:hover {
-    color: #e1d600b6;
+    background-color: #e1d6005a;
+    transition: background-color 0.5s ease ;
   }
   
   nav li.activate a {
     color: #423f04fb;
-    background-color: #08da60f7;
+    background-color: #e1d600b6;
   }

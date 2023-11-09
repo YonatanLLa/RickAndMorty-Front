@@ -62,3 +62,16 @@
     background-color: white;
     margin: 0 5px;
   }
+
+  /* imagen */
+  .image-container {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .image-container:hover img {
+    filter: brightness(40%); /* Puedes ajustar este valor según tu preferencia */
+    transition: filter 0.5s ease;
+  }
+  

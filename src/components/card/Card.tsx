@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { CardFavProps } from "../../interface/characters";
 import "./Card.css";
 import { LoadingImg } from "./LoadingImg";
+import { Link } from "react-router-dom";
 
 export const Card: React.FC<CardFavProps> = ({
   character,
@@ -37,12 +38,17 @@ export const Card: React.FC<CardFavProps> = ({
           </svg>
         </button>
       </div>
-      <img
-        src={character.image}
-        alt={character.name}
-        onLoad={handleImageLoad}
-        style={{ display: isLoading ? "none" : "block" }}
-      />
+      <Link to={`/details/${character.id}`}>
+        <div className="image-container">
+          <img
+            src={character.image}
+            alt={character.name}
+            onLoad={handleImageLoad}
+            style={{ display: isLoading ? "none" : "block" }}
+          />
+          {isLoading && <LoadingImg />}
+        </div>
+      </Link>
       {isLoading && <LoadingImg />}
 
       <div className="card-footer">

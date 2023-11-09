@@ -5,6 +5,7 @@ import About from "./view/about/About";
 import NavBar from "./components/navbar/NavBar";
 import Landing from "./view/landing/Landing";
 import { Favorite } from "./view/favorite/Favorite";
+import { Detail } from "./view/detail/Detail";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/favorites" element={<Favorite />} />
+        <Route path="/details/:id" element={<Detail />} />
       </Routes>
     </div>
   );
