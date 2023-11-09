@@ -17,11 +17,18 @@
 
 .nav-container ul li a {
     text-decoration: none;
-    color: black;
+    color: #fff;
     font-size: 1.5rem;
     padding: 1rem;
 }
 
-.nav-container ul li a:hover {
-    background-color: rgb(238, 238, 238);
-}
+
+  
+  nav li a:hover {
+    color: #e1d600b6;
+  }
+  
+  nav li.activate a {
+    color: #000;
+    background-color: #08da60f7;
+  }

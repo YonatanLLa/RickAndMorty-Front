@@ -37,14 +37,14 @@
     width: 25px;
     height: 25px;
     fill: red;
-    stroke: black;
+    /* stroke: black; */
 }
 .notFavorite svg {
     width: 25px;
     height: 25px;
     /* red */
     fill: rgb(253, 253, 253);
-    stroke: black;
+    /* stroke: black; */
 }
 
 /* loading */

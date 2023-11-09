@@ -3,7 +3,7 @@ import styles from "./Favorite.module.css"
 import { Characters } from "../../interface/characters.ts";
 
 import { useHome } from "../../hooks/useHome.ts";
-import { CardFavorite } from "./cardFavorite.tsx";
+import { CardFavorite } from "../../components/favorite/CardFavorite.tsx";
 import { NotFavorite } from "./NotFavorite.tsx";
 
 export const Favorite: React.FC = () => {

@@ -1,22 +1,38 @@
 import "./NavBar.css"
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 
 const NavBar: React.FC = () => {
+    const [currentPage, setCurrentPage] = useState('home')
+    const handlePageChange = (page: string) => {
+        console.log(page);
+    
+        setCurrentPage(page)
+    }
+    
   return (
     <nav className="nav-container">
         <ul>
-            <li>
-                <Link to="/">Inicio</Link>
+            <li className={ currentPage === "landing"? "activate": "" }>
+                <Link to="/" onClick={() => handlePageChange("landing")}>Inicio</Link>
             </li>
-            <li>
-                <Link to="/home">Teajetas</Link>
+            <li className={ currentPage === "home"? "activate": "" } >
+                <Link 
+                    to="/home"
+                    onClick={() => handlePageChange("home")}
+                    >Teajetas</Link>
             </li>
-            <li>
-                <Link to="/about"> Sobre Mí  </Link>
+            <li className={ currentPage === "about"? "activate": "" } >
+                <Link 
+                    to="/about"
+                    onClick={() => handlePageChange("about")}
+                     > Sobre Mí  </Link>
             </li>
-            <li>
-                <Link to="/favorites"> Favoritos </Link>
+            <li className={ currentPage === "favorites"? "activate": "" } >
+                <Link 
+                    to="/favorites"
+                    onClick={() => handlePageChange("favorites")}
+                    > Favoritos </Link>
             </li>
         </ul>
     </nav>
