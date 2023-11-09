@@ -1,29 +1,36 @@
 import { createContext, ReactNode } from "react";
 import { useHomeReducer } from "../reducers/action";
-import { CharacterInitialState } from "../interface/characters";
+import { CharacterInitialState, Characters } from "../interface/characters";
 interface MiContextType {
-    //state is a array of
-    state: CharacterInitialState
-    getAllCharacters: ()=>void
+  //state is a array of
+  state: CharacterInitialState;
+  getAllCharacters: () => void;
+  addFavorite: (character: Characters) => void;
+  removeFavorite: (character: Characters) => void;
 }
 
 export const HomeContext = createContext<MiContextType | undefined>(undefined);
 
 interface MiProviderProps {
-    children: ReactNode;
+  children: ReactNode;
 }
 
-  
-export const HomeProvider: React.FC<MiProviderProps> = ({ children }: MiProviderProps) => {
+export const HomeProvider: React.FC<MiProviderProps> = ({
+  children,
+}: MiProviderProps) => {
+  const { state, getAllCharacters, addFavorite, removeFavorite } =
+    useHomeReducer();
 
-    const { state, getAllCharacters } = useHomeReducer();
-
-    return (
-        <HomeContext.Provider value={{
-            state,
-            getAllCharacters
-        }}>
-            {children}
-        </HomeContext.Provider>
-    );
+  return (
+    <HomeContext.Provider
+      value={{
+        state,
+        getAllCharacters,
+        addFavorite,
+        removeFavorite,
+      }}
+    >
+      {children}
+    </HomeContext.Provider>
+  );
 };
