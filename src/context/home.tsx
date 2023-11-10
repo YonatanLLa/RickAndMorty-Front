@@ -7,6 +7,8 @@ interface MiContextType {
   getAllCharacters: () => void;
   addFavorite: (character: Characters) => void;
   removeFavorite: (character: Characters) => void;
+  searchCharacter: (searchBar: string) => void;
+  
 }
 
 export const HomeContext = createContext<MiContextType | undefined>(undefined);
@@ -18,7 +20,7 @@ interface MiProviderProps {
 export const HomeProvider: React.FC<MiProviderProps> = ({
   children,
 }: MiProviderProps) => {
-  const { state, getAllCharacters, addFavorite, removeFavorite } =
+  const { state, getAllCharacters, addFavorite, removeFavorite, searchCharacter } =
     useHomeReducer();
 
   return (
@@ -28,6 +30,7 @@ export const HomeProvider: React.FC<MiProviderProps> = ({
         getAllCharacters,
         addFavorite,
         removeFavorite,
+        searchCharacter
       }}
     >
       {children}

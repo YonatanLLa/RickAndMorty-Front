@@ -1,12 +1,13 @@
 import { HOME_ACTION_TYPES } from "./tipes";
 import { CharacterInitialState } from "../interface/characters";
 
-const { GET_ALL_CHARACTERS, ADD_FAVORITE, REMOVE_FAVORITE } = HOME_ACTION_TYPES;
+const { GET_ALL_CHARACTERS, ADD_FAVORITE, REMOVE_FAVORITE,SEARCH_CHARACTER  } = HOME_ACTION_TYPES;
 
 export const homeIinialState: CharacterInitialState = {
   // is a array of characters in the object
   characters: [],
   favorite: [],
+  searchBar: [],
 };
 
 const UPDATE_STATE_BY_ACTION = {
@@ -22,6 +23,7 @@ const UPDATE_STATE_BY_ACTION = {
         origin: item.origin.name,
         image: item.image,
       })),
+      searchBar: state.characters
     };
   },
   // add a character to the favorite array
@@ -47,6 +49,17 @@ const UPDATE_STATE_BY_ACTION = {
       favorite,
     };
   },
+  [SEARCH_CHARACTER]: (state: CharacterInitialState, action: any) => {    
+    const searchTerm = action.payload.toLowerCase();
+    return {
+      ...state,
+      characters: state.searchBar.filter((item) => {
+          const itemName = item.name.toLowerCase();
+          return itemName.includes(searchTerm);
+      }),
+  };
+  },
+
 };
 
 export const homeReducer = (state: CharacterInitialState, action: any) => {

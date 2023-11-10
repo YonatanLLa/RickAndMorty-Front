@@ -33,4 +33,5 @@ export interface CardFavProps extends FavProps {
 export interface CharacterInitialState {
   characters: Characters[];
   favorite: Characters[];
+  searchBar: Characters[];
 }

@@ -4,7 +4,7 @@ import { homeReducer, homeIinialState } from "./reducer";
 import axios from "axios";
 import { Characters } from "../interface/characters";
 
-const { GET_ALL_CHARACTERS, ADD_FAVORITE, REMOVE_FAVORITE } = HOME_ACTION_TYPES;
+const { GET_ALL_CHARACTERS, ADD_FAVORITE, REMOVE_FAVORITE, SEARCH_CHARACTER } = HOME_ACTION_TYPES;
 
 const api = "https://rickandmortyapi.com/api/character";
 
@@ -42,10 +42,19 @@ export const useHomeReducer = () => {
     });
   };
 
+  const searchCharacter = (searchBar: string) => {
+
+    dispatch({
+      type: SEARCH_CHARACTER,
+      payload: searchBar,
+    });
+  }
+
   return {
     state,
     getAllCharacters,
     addFavorite,
     removeFavorite,
+    searchCharacter
   };
 };
