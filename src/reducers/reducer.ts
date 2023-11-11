@@ -4,7 +4,6 @@ import { CharacterInitialState } from "../interface/characters";
 const { GET_ALL_CHARACTERS, ADD_FAVORITE, REMOVE_FAVORITE,SEARCH_CHARACTER,FILTER_CHARACTERS  } = HOME_ACTION_TYPES;
 
 export const homeIinialState: CharacterInitialState = {
-  // is a array of characters in the object
   characters: [],
   favorite: [],
   searchBar: [],
@@ -28,7 +27,6 @@ const UPDATE_STATE_BY_ACTION = {
       allFilters: state.characters,
     };
   },
-  // add a character to the favorite array
   [ADD_FAVORITE]: (state: CharacterInitialState, action: any) => {
     const { id } = action.payload;
     const characterToAdd = state.characters.find((item) => item.id === id);
@@ -72,17 +70,12 @@ const UPDATE_STATE_BY_ACTION = {
         if (species !== 'all' && item.species !== species) {          
           return false;
         }
-        // Filtra por género
         if (gender !== 'all' && item.gender !== gender) {
           return false;
         }
-        // Filtra por estado
         if (status !== 'all' && item.status !== status) {
           return false;
         }
-        // Si no hay coincidencias, incluye el elemento
-        console.log(species, "species");
-        
         return true;
       }),
     }

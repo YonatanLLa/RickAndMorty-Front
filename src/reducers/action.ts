@@ -20,13 +20,12 @@ export const useHomeReducer = () => {
   const getAllCharacters = async () => {
     try {
       const response = await axios.get(api);
-
       dispatch({
         type: GET_ALL_CHARACTERS,
         payload: response.data.results,
       });
     } catch (error) {
-      console.log(error);
+      console.error("Error:", error);
     }
   };
 
@@ -37,31 +36,41 @@ export const useHomeReducer = () => {
         payload: character,
       });
     } catch (error) {
-      console.log(error);
+      console.error("Error:", error);
     }
   };
 
   const removeFavorite = (character: Characters) => {
-    dispatch({
-      type: REMOVE_FAVORITE,
-      payload: character,
-    });
+    try {
+      dispatch({
+        type: REMOVE_FAVORITE,
+        payload: character,
+      });
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   const searchCharacter = (searchBar: string) => {
-    dispatch({
-      type: SEARCH_CHARACTER,
-      payload: searchBar,
-    });
+    try {
+      dispatch({
+        type: SEARCH_CHARACTER,
+        payload: searchBar,
+      });
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   const filterCharacters = (filters: any) => {
-    console.log(filters, "filters");
-    dispatch({
-      type: FILTER_CHARACTERS,
-      payload: filters,
-    });
-
+    try {
+      dispatch({
+        type: FILTER_CHARACTERS,
+        payload: filters,
+      });
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return {
