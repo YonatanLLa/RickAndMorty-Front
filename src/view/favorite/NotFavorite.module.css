@@ -21,3 +21,17 @@ h2 {
     fill: rgb(224, 36, 36);
     stroke: rgb(255, 255, 255);    
 }
+
+@media only screen and (max-width: 600px) {
+    h2 {
+        font-size: 2rem;
+    }
+    svg {
+        width: 200px;
+        height: 200px;
+    }
+    .notFavorite {
+        height: 100vh;
+
+    }
+}

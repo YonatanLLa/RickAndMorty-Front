@@ -63,6 +63,13 @@
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
+}
 
-         
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+ .landingTitle {
+  font-size: 3rem;
+}
 }

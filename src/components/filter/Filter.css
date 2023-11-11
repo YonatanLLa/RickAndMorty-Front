@@ -1,9 +1,76 @@
 .filterContainer {
-    display: flex;  
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 1rem 0 1rem;
+  margin: auto 10rem;
+  border-radius: 10px;
+  /* fill: none; */
+}
+.filterChildren {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  border-radius: 10px;
+  /* fill: none; */
+}
+
+.fliterOption {
+  text-align: center;
+  /* background-color: #f4f4f4; */
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-left: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.557);
+}
+
+h4 {
+  margin-right: 10px;
+  font-size: 1.2rem;
+  color: #585858;
+}
+
+select {
+  padding: 5px;
+  font-size: 1rem;
+  font-weight: 400;
+  border: 2px solid #e1d6007b;
+  border-radius: 4px;
+  background-color: #f2f2f2;
+  font-family: var(--font-secondary);
+  color: #333;
+  appearance: none; /* Elimina el estilo nativo del navegador */
+}
+select option {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+/* Estilo cuando el select está enfocado */
+select:focus {
+  outline: none;
+  border: 2px solid #e1d600;
+}
+
+select:hover {
+  cursor: pointer;
+}
+.filterItem {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .filterContainer {
+    flex-direction: column;
     align-items: center;
-    padding: 5rem 1rem 0 1rem;
-    margin: auto 10rem;
-    border-radius: 10px;
-    /* fill: none; */
+    padding-top: 11rem;
+  }
+  .filterItem {
+    padding-top: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  
 }

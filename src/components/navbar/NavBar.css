@@ -34,3 +34,25 @@
     color: #423f04fb;
     background-color: #e1d600b6;
   }
+
+  @media only screen and (max-width: 600px) {
+    .nav-container {
+      overflow: hidden;
+    }
+  
+    .nav-container ul {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .nav-container li {
+      display: block;
+    }
+    .nav-container ul li a {
+     
+      padding: 0 1rem 0 1rem;
+
+  }
+  
+  }
+  

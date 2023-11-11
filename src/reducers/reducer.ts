@@ -1,13 +1,14 @@
 import { HOME_ACTION_TYPES } from "./tipes";
 import { CharacterInitialState } from "../interface/characters";
 
-const { GET_ALL_CHARACTERS, ADD_FAVORITE, REMOVE_FAVORITE,SEARCH_CHARACTER  } = HOME_ACTION_TYPES;
+const { GET_ALL_CHARACTERS, ADD_FAVORITE, REMOVE_FAVORITE,SEARCH_CHARACTER,FILTER_CHARACTERS  } = HOME_ACTION_TYPES;
 
 export const homeIinialState: CharacterInitialState = {
   // is a array of characters in the object
   characters: [],
   favorite: [],
   searchBar: [],
+  allFilters: [],
 };
 
 const UPDATE_STATE_BY_ACTION = {
@@ -23,7 +24,8 @@ const UPDATE_STATE_BY_ACTION = {
         origin: item.origin.name,
         image: item.image,
       })),
-      searchBar: state.characters
+      searchBar: state.characters,
+      allFilters: state.characters,
     };
   },
   // add a character to the favorite array
@@ -58,6 +60,32 @@ const UPDATE_STATE_BY_ACTION = {
           return itemName.includes(searchTerm);
       }),
   };
+  },
+
+  [FILTER_CHARACTERS]: (state: CharacterInitialState, action: any) => {
+    // const searchTerm = action.payload;
+    const {species, gender, status} = action.payload;
+
+    return {
+      ...state,
+      characters: state.allFilters.filter((item) => {
+        if (species !== 'all' && item.species !== species) {          
+          return false;
+        }
+        // Filtra por género
+        if (gender !== 'all' && item.gender !== gender) {
+          return false;
+        }
+        // Filtra por estado
+        if (status !== 'all' && item.status !== status) {
+          return false;
+        }
+        // Si no hay coincidencias, incluye el elemento
+        console.log(species, "species");
+        
+        return true;
+      }),
+    }
   },
 
 };

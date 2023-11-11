@@ -34,4 +34,5 @@ export interface CharacterInitialState {
   characters: Characters[];
   favorite: Characters[];
   searchBar: Characters[];
+  allFilters: Characters[];
 }
