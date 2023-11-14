@@ -22,15 +22,7 @@ const UPDATE_STATE_BY_ACTION = {
         origin: item.origin.name,
         image: item.image,
       })),
-      searchBar:  action.payload.map((item: any) => ({
-        id: item.id,
-        name: item.name.split(" ").slice(0, 2).join(" "),
-        status: item.status,
-        species: item.species,
-        gender: item.gender,
-        origin: item.origin.name,
-        image: item.image,
-      })),
+      searchBar: state.characters,
 };
   },
   [ADD_FAVORITE]: (state: CharacterInitialState, action: any) => {
