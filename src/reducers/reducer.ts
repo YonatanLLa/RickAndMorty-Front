@@ -7,7 +7,6 @@ export const homeIinialState: CharacterInitialState = {
   characters: [],
   favorite: [],
   searchBar: [],
-  allFilters: [],
 };
 
 const UPDATE_STATE_BY_ACTION = {
@@ -24,8 +23,7 @@ const UPDATE_STATE_BY_ACTION = {
         image: item.image,
       })),
       searchBar: state.characters,
-      allFilters: state.characters,
-    };
+};
   },
   [ADD_FAVORITE]: (state: CharacterInitialState, action: any) => {
     const { id } = action.payload;
@@ -66,7 +64,7 @@ const UPDATE_STATE_BY_ACTION = {
 
     return {
       ...state,
-      characters: state.allFilters.filter((item) => {
+      characters: state.searchBar.filter((item) => {
         if (species !== 'all' && item.species !== species) {          
           return false;
         }
