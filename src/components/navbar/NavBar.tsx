@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom'
 const NavBar: React.FC = () => {
     const [currentPage, setCurrentPage] = useState('home')
     const handlePageChange = (page: string) => {
-        console.log(page);
-    
         setCurrentPage(page)
     }
     
