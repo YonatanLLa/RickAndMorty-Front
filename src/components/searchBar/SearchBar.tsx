@@ -28,6 +28,7 @@ export const SearchBar: React.FC = () => {
             className="search-bar-container">
             <input 
                 type="text" 
+                id="characterSearch"
                 placeholder="Search" 
                 className="search-input"
                 value={searchBar}

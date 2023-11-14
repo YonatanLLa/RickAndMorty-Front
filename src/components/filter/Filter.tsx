@@ -49,6 +49,8 @@ export const Filter: React.FC = () => {
                 : "Estado: "}
             </h4>
             <select
+              id={`${filterType}Filter`}
+              name={`${filterType}Filter`}
               value={filters[filterType]}
               onChange={(e: ChangeEvent<HTMLSelectElement>) =>
                 handleFilterChange(
